@@ -49,6 +49,10 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
         <div className="border-b border-purple-900/30 pb-4">
           <h3 className="text-purple-400 text-xs uppercase tracking-widest mb-1">{character.title}</h3>
           <h2 className="text-xl font-serif text-white tracking-wide">{character.name}</h2>
+          <div className="flex gap-4 mt-2 text-xs text-zinc-400 font-mono">
+            <span>Age: {character.age}</span>
+            <span>Height: {character.height}</span>
+          </div>
         </div>
 
         {/* Tags */}
