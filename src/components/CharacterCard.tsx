@@ -19,10 +19,8 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, index }) => {
       transition={{ duration: 0.8, delay: index * 0.1 }}
       className="w-full max-w-md mx-auto mb-12 bg-zinc-900/80 border border-purple-900/30 overflow-hidden shadow-2xl shadow-black relative group"
     >
-      {/* Card Header / Number */}
-      <div className="absolute top-4 left-4 z-20 text-xs font-mono text-purple-400/50 tracking-widest">
-        CARD {String(character.id).padStart(2, '0')}
-      </div>
+      {/* Card Header / Number - Removed as requested */}
+
 
       {/* Image Slot (Top 50% approx) */}
       <div 
