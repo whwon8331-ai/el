@@ -11,6 +11,7 @@ interface IntroSceneProps {
 const IntroScene: React.FC<IntroSceneProps> = ({ onComplete }) => {
   const [textVisible, setTextVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [canProceed, setCanProceed] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [isLoadingAudio, setIsLoadingAudio] = useState(false);
@@ -136,6 +137,7 @@ const IntroScene: React.FC<IntroSceneProps> = ({ onComplete }) => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 2.5 }}
+                onAnimationComplete={() => setCanProceed(true)}
                 className="text-gray-200 italic"
               >
                 "{line2}"
@@ -145,19 +147,21 @@ const IntroScene: React.FC<IntroSceneProps> = ({ onComplete }) => {
         </div>
 
         {/* Proceed Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 4.5, duration: 1 }}
-          className="pt-12"
-        >
-          <button
-            onClick={onComplete}
-            className="px-8 py-3 border-b border-purple-500/30 text-purple-200/70 hover:text-purple-100 hover:border-purple-400 transition-all text-sm tracking-[0.2em] uppercase"
+        {canProceed && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="pt-12"
           >
-            Enter Shop
-          </button>
-        </motion.div>
+            <button
+              onClick={onComplete}
+              className="px-8 py-3 border-b border-purple-500/30 text-purple-200/70 hover:text-purple-100 hover:border-purple-400 transition-all text-sm tracking-[0.2em] uppercase"
+            >
+              Enter Shop
+            </button>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
