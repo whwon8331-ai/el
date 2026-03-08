@@ -61,6 +61,7 @@ export default function MainScreen() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
+          <span className="text-[10px] uppercase tracking-widest">Click Character Card</span>
           <span className="text-[10px] uppercase tracking-widest">Scroll Down</span>
           <ArrowDown size={16} />
         </motion.div>
