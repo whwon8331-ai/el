@@ -46,7 +46,7 @@ export default function MainScreen() {
             </p>
             <p>
               당신의 체액 한 방울을 갈망하는<br />
-              7명의 죄인들이 기다리고 있습니다.
+              8명의 죄인들이 기다리고 있습니다.
             </p>
             <p className="italic text-zinc-500">
               그들은 굶주려 있습니다.<br />

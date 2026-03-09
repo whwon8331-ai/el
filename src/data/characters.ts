@@ -96,4 +96,16 @@ export const characters: Character[] = [
     age: "25세",
     height: "184cm",
   },
+  {
+    id: 8,
+    title: "사역마",
+    name: "포치 (Pochi)",
+    tags: ["#조력자", "#충견", "#집착", "#하극상"],
+    dialogue: "히히, 주인님! 오늘도 돈 많이 벌어왔어? 나 칭찬해 줘!",
+    description: "낯선 이세계에서 당신의 눈과 귀가 되어주는 유일한 내 편입니다. 상점의 모든 잡무를 처리하며 꼬리를 흔들지만, 방심하지 마십시오. 충직한 개도 배가 고프면 주인의 가장 부드러운 살점을 탐하는 법입니다.",
+    hiddenVoice: "\"다른 새끼 냄새 묻히지 마... 넌 내 거야. 내 주인님이잖아. 나만 예뻐해 줘, 제발...\"",
+    imageUrl: "https://i.postimg.cc/MHFxbRWN/pochi.webp",
+    age: "??",
+    height: "181cm",
+  },
 ];
