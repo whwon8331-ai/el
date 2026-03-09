@@ -16,12 +16,13 @@ export default function App() {
   const [scene, setScene] = useState<Scene>("splash");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const [audioError, setAudioError] = useState<string | null>(null);
 
   // Aggressively try to play audio on any user interaction
   useEffect(() => {
     const playAudio = () => {
-      if (audioRef.current && !isPlaying) {
+      if (audioRef.current && !isPlaying && !isMuted) {
         audioRef.current.volume = 0.5;
         audioRef.current.play()
           .then(() => {
@@ -51,7 +52,7 @@ export default function App() {
       document.removeEventListener('touchstart', playAudio);
       document.removeEventListener('keydown', playAudio);
     };
-  }, [isPlaying]);
+  }, [isPlaying, isMuted]);
 
   const handleStart = () => {
     setScene("intro");
@@ -62,9 +63,11 @@ export default function App() {
       if (isPlaying) {
         audioRef.current.pause();
         setIsPlaying(false);
+        setIsMuted(true);
       } else {
         audioRef.current.play().then(() => {
           setIsPlaying(true);
+          setIsMuted(false);
           setAudioError(null);
         }).catch((err) => {
           console.error(err);
