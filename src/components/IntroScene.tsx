@@ -56,6 +56,7 @@ const IntroScene: React.FC<IntroSceneProps> = ({ onComplete }) => {
           
           // Auto-play if allowed (might be blocked by browser policy)
           const audio = new Audio(url);
+          audio.loop = true;
           audioRef.current = audio;
           audio.onended = () => setIsPlaying(false);
           
@@ -80,7 +81,7 @@ const IntroScene: React.FC<IntroSceneProps> = ({ onComplete }) => {
     
     return () => {
       clearTimeout(timer);
-      if (audioUrl) URL.revokeObjectURL(audioUrl);
+      // Removed URL.revokeObjectURL to allow audio to continue playing across scenes
     };
   }, []);
 
