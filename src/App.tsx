@@ -82,7 +82,7 @@ export default function App() {
       {/* Using Discord CDN link */}
       <audio
         ref={audioRef}
-        src="https://cdn.discordapp.com/attachments/1480535996197113991/1480536762756501504/talkf_wzn1ZbKVPt_GaP7EJyLPD6BsXUjxEmV7k_f_1c98ecd5c341.mp3?ex=69b15a4f&is=69b008cf&hm=be32c038e9d601587c9aecd3e9e06941dd35ee21b7739bd1812584b49ac75953&"
+        src="https://cdn.discordapp.com/attachments/1480535996197113991/1480536762756501504/talkf_wzn1ZbKVPt_GaP7EJyLPD6BsXUjxEmV7k_f_1c98ecd5c341.mp3?ex=69b2abcf&is=69b15a4f&hm=ea6c7f659149dba04206595cc610f7a446f18e725008fa4b8aa2720c4d32a3ae&"
         loop
         preload="auto"
         onError={(e) => {
