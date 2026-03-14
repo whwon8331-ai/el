@@ -87,7 +87,7 @@ export default function App() {
         preload="auto"
         onError={(e) => {
           console.error("Audio element error:", e);
-          setAudioError("음원 링크를 로드할 수 없습니다. 링크가 만료되었을 수 있습니다.");
+          setAudioError("음원 파일을 재생할 수 없습니다. 업로드된 파일이 비어있거나 손상되었을 수 있습니다.");
         }}
       />
       
